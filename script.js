@@ -29,3 +29,20 @@ function playRound(playerSelection, computerSelection) {
     console.log(result);
     return playerWin;
 }
+
+function game() {
+    let playerWins = 0;
+    let computerWins = 0;
+    for (round = 0; round < 5; round++) {
+        let playerSelection = prompt("Would you like to pick rock, paper, or scissors?");
+        while (!CHOICES.includes(playerSelection)) {
+            playerSelection = prompt("Invalid prompt. Please pick rock, paper, or scissors.");
+        }
+        let roundResult = playRound(playerSelection, getComputerChoice());
+        (roundResult) ? playerWins += 1 : computerWins += 1 
+    }
+
+    (playerWins > computerWins) ? alert("Player wins!") : alert("Player loses!")
+}
+
+game();
