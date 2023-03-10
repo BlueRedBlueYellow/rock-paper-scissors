@@ -11,7 +11,7 @@ function capitalizeFirstLetter(string) {
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     let playerWin = false;
-    let result = ""
+    let result = "";
 
     if (playerSelection === computerSelection) {
         result = `You both drew ${capitalizeFirstLetter(playerSelection)}.`;
@@ -26,7 +26,7 @@ function playRound(playerSelection, computerSelection) {
         result = `You lose! ${capitalizeFirstLetter(computerSelection)} beats ${capitalizeFirstLetter(playerSelection)}`;
     }
 
-    console.log(result);
+    alert(result);
     return playerWin;
 }
 
@@ -41,10 +41,11 @@ function game() {
             roundResult = playRound(playerSelection, getComputerChoice());
         }
 
-        (roundResult) ? playerWins += 1 : computerWins += 1 
+        (roundResult) ? playerWins += 1 : computerWins += 1;
+        alert(`Your wins: ${playerWins}. Your losses ${computerWins}`);
     }
 
-    (playerWins > computerWins) ? alert("Player wins!") : alert("Player loses!")
+    (playerWins > computerWins) ? alert("Player wins!") : alert("Player loses!");
 }
 
 game();
