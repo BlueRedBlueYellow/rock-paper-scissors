@@ -14,7 +14,7 @@ function playRound(playerSelection, computerSelection) {
     let result = ""
 
     if (playerSelection === computerSelection) {
-        result = `You both drew ${capitalizeFirstLetter(playerSelection)}. Try again!`;
+        result = `You both drew ${capitalizeFirstLetter(playerSelection)}.`;
         playerWin = "tie";
     } else if (playerSelection === "rock" && computerSelection === "scissors" ||
         playerSelection === "scissors" && computerSelection === "paper" ||
@@ -33,12 +33,14 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     let playerWins = 0;
     let computerWins = 0;
-    for (round = 0; round < 5; round++) {
+    for (round = 0; round < 5; round++) { // change to while loop later in course
         let playerSelection = prompt("Would you like to pick rock, paper, or scissors?");
-        while (!CHOICES.includes(playerSelection)) {
-            playerSelection = prompt("Invalid prompt. Please pick rock, paper, or scissors.");
-        }
         let roundResult = playRound(playerSelection, getComputerChoice());
+        while (roundResult == 'tie') {
+            playerSelection = prompt("Tie! Please pick again."); 
+            roundResult = playRound(playerSelection, getComputerChoice());
+        }
+
         (roundResult) ? playerWins += 1 : computerWins += 1 
     }
 
