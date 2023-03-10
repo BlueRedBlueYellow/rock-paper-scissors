@@ -42,10 +42,12 @@ function game() {
             playerSelection = prompt("Tie! Please pick again."); 
             roundResult = playRound(playerSelection, getComputerChoice());
         }
+        roundResults += `Round ${round}: You ${(roundResult) ? "won!" : "lost!"}\n`;
         (roundResult) ? playerWins += 1 : computerWins += 1;
         console.log(`Your wins: ${playerWins}. Your losses ${computerWins}`);
     }
 
+    console.log(roundResults);
     (playerWins > computerWins) ? console.log("Player wins!") : console.log("Player loses!");
 }
 
