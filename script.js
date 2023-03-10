@@ -26,13 +26,15 @@ function playRound(playerSelection, computerSelection) {
         result = `You lose! ${capitalizeFirstLetter(computerSelection)} beats ${capitalizeFirstLetter(playerSelection)}`;
     }
 
-    alert(result);
+    console.log(result);
     return playerWin;
 }
 
 function game() {
     let playerWins = 0;
     let computerWins = 0;
+    let roundResults = ``;
+
     for (round = 0; round < 5; round++) { // change to while loop later in course
         let playerSelection = prompt("Would you like to pick rock, paper, or scissors?");
         let roundResult = playRound(playerSelection, getComputerChoice());
@@ -40,12 +42,11 @@ function game() {
             playerSelection = prompt("Tie! Please pick again."); 
             roundResult = playRound(playerSelection, getComputerChoice());
         }
-
         (roundResult) ? playerWins += 1 : computerWins += 1;
-        alert(`Your wins: ${playerWins}. Your losses ${computerWins}`);
+        console.log(`Your wins: ${playerWins}. Your losses ${computerWins}`);
     }
 
-    (playerWins > computerWins) ? alert("Player wins!") : alert("Player loses!");
+    (playerWins > computerWins) ? console.log("Player wins!") : console.log("Player loses!");
 }
 
 game();
