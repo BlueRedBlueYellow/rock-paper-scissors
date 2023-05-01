@@ -35,17 +35,15 @@ function game() {
     let computerWins = 0;
     let roundResults = ``;
 
-    for (round = 0; round < 5; round++) { // change to while loop later in course
-        let playerSelection = prompt("Would you like to pick rock, paper, or scissors?");
-        let roundResult = playRound(playerSelection, getComputerChoice());
-        while (roundResult == 'tie') {
-            playerSelection = prompt("Tie! Please pick again."); 
-            roundResult = playRound(playerSelection, getComputerChoice());
-        }
-        roundResults += `Round ${round + 1}: You ${(roundResult) ? "won!" : "lost!"}\n`;
-        (roundResult) ? playerWins += 1 : computerWins += 1;
-        console.log(`Your wins: ${playerWins}. Your losses: ${computerWins}.`);
+    let playerSelection = prompt("Would you like to pick rock, paper, or scissors?");
+    let roundResult = playRound(playerSelection, getComputerChoice());
+    while (roundResult == 'tie') {
+        playerSelection = prompt("Tie! Please pick again."); 
+        roundResult = playRound(playerSelection, getComputerChoice());
     }
+    roundResults += `Round 1: You ${(roundResult) ? "won!" : "lost!"}\n`;
+    (roundResult) ? playerWins += 1 : computerWins += 1;
+    console.log(`Your wins: ${playerWins}. Your losses: ${computerWins}.`);
 
     console.log(roundResults);
     (playerWins > computerWins) ? console.log("Player wins!") : console.log("Player loses!");
