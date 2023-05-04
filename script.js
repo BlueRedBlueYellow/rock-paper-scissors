@@ -7,9 +7,9 @@ function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-function playRound(button) {
+function playRound() {
+    let playerSelection = this.dataset.choice;
     let computerSelection = CHOICES[Math.floor(Math.random() * CHOICES.length)];
-    let playerSelection = playerSelection.toLowerCase();
 
     let playerWin = false;
     let result = "";
