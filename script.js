@@ -3,16 +3,14 @@ const CHOICES = ["rock", "paper", "scissors"];
 const allButtons = document.querySelectorAll(".choice");
 allButtons.forEach(button => button.addEventListener('click', playRound));
 
-function getComputerChoice() {
-    return CHOICES[Math.floor(Math.random() * CHOICES.length)]; 
-}
-
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase();
+function playRound(button) {
+    let computerSelection = CHOICES[Math.floor(Math.random() * CHOICES.length)];
+    let playerSelection = playerSelection.toLowerCase();
+
     let playerWin = false;
     let result = "";
 
