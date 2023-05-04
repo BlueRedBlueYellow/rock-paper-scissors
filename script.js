@@ -1,5 +1,8 @@
 const CHOICES = ["rock", "paper", "scissors"];
 
+const allButtons = document.querySelectorAll(".choice");
+allButtons.forEach(button => button.addEventListener('click', playRound));
+
 function getComputerChoice() {
     return CHOICES[Math.floor(Math.random() * CHOICES.length)]; 
 }
