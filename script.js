@@ -4,6 +4,8 @@ const allButtons = document.querySelectorAll(".choice");
 const resultText = document.querySelector("#results");
 allButtons.forEach(button => button.addEventListener('click', playRound));
 
+let playerWins = 0;
+let computerWins = 0;
 let roundResults = ``;
 let currentRound = 0;
 
@@ -51,6 +53,7 @@ function calculateGameResults(roundResult) {
     console.log(`Your wins: ${playerWins}. Your losses: ${computerWins}.`);
 
     console.log(roundResults);
+
     (playerWins > computerWins) ? console.log("Player wins!") : console.log("Player loses!");
 }
 
