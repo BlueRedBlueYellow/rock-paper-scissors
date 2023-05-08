@@ -1,6 +1,7 @@
 const CHOICES = ["rock", "paper", "scissors"];
 
 const allButtons = document.querySelectorAll(".choice");
+const resultText = document.querySelector("#results");
 allButtons.forEach(button => button.addEventListener('click', playRound));
 
 function getComputerChoice() {
@@ -34,16 +35,9 @@ function playRound() {
     return playerWin;
 }
 
-function game() {
-    let playerWins = 0;
-    let computerWins = 0;
-    let roundResults = ``;
-
-    let playerSelection = prompt("Would you like to pick rock, paper, or scissors?");
-    let roundResult = playRound(playerSelection, getComputerChoice());
-    while (roundResult == 'tie') {
-        playerSelection = prompt("Tie! Please pick again."); 
-        roundResult = playRound(playerSelection, getComputerChoice());
+    resultText.textContent = "Would you like to pick rock, paper, or scissors?";
+    if (roundResult == 'tie') {
+        resultText.textContent = "Tie! Please pick again."; 
     }
     roundResults += `Round 1: You ${(roundResult) ? "won!" : "lost!"}\n`;
     (roundResult) ? playerWins += 1 : computerWins += 1;
