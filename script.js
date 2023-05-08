@@ -4,6 +4,9 @@ const allButtons = document.querySelectorAll(".choice");
 const resultText = document.querySelector("#results");
 allButtons.forEach(button => button.addEventListener('click', playRound));
 
+let roundResults = ``;
+let currentRound = 0;
+
 function getComputerChoice() {
     return CHOICES[Math.floor(Math.random() * CHOICES.length)]; 
 }
@@ -36,12 +39,14 @@ function playRound() {
 }
 
 function calculateGameResults(roundResult) {
+    currentRound += 1;
     resultText.textContent = "Would you like to pick rock, paper, or scissors?";
     if (roundResult == 'tie') {
         resultText.textContent = "Tie! Please pick again."; 
     }
-    roundResults += `Round 1: You ${(roundResult) ? "won!" : "lost!"}\n`;
+    roundResults += `Round ${currentRound}: You ${(roundResult) ? "won!" : "lost!"}\n`;
     (roundResult) ? playerWins += 1 : computerWins += 1;
+
     console.log(`Your wins: ${playerWins}. Your losses: ${computerWins}.`);
 
     console.log(roundResults);
