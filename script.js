@@ -32,9 +32,10 @@ function playRound() {
     }
 
     console.log(result);
-    return playerWin;
+    calculateGameResults(playerWin);
 }
 
+function calculateGameResults(roundResult) {
     resultText.textContent = "Would you like to pick rock, paper, or scissors?";
     if (roundResult == 'tie') {
         resultText.textContent = "Tie! Please pick again."; 
