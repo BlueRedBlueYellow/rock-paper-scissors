@@ -17,6 +17,7 @@ function capitalizeFirstLetter(string) {
 
 function playRound() {
     let playerSelection = this.dataset.choice;
+    let computerSelection = getComputerChoice();
 
     let playerWin = false;
     let result = "";
