@@ -54,7 +54,7 @@ function calculateGameResults(roundResult) {
 
     console.log(roundResults);
 
-    (playerWins > computerWins) ? console.log("Player wins!") : console.log("Player loses!");
+    (playerWins >= 5) ? console.log("Player wins!") : console.log("Player loses!");
 }
 
 game();
