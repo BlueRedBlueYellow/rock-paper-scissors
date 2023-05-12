@@ -34,7 +34,6 @@ function playRound() {
         playerWin = false;
     }
 
-    console.log(result);
     calculateGameResults(playerWin);
 }
 
