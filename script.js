@@ -20,9 +20,7 @@ function capitalizeFirstLetter(string) {
 function playRound() {
     let playerSelection = this.dataset.choice;
     let computerSelection = getComputerChoice();
-
-    let playerWin = false;
-    let result = "";
+    let playerWin;
 
     if (playerSelection === computerSelection) {
         result = `You both drew ${capitalizeFirstLetter(playerSelection)}.`;
@@ -31,10 +29,9 @@ function playRound() {
         playerSelection === "scissors" && computerSelection === "paper" ||
         playerSelection === "paper" && computerSelection === "rock") 
     {
-        result = `You win! ${capitalizeFirstLetter(playerSelection)} beats ${capitalizeFirstLetter(computerSelection)}`;
         playerWin = true;
     } else {
-        result = `You lose! ${capitalizeFirstLetter(computerSelection)} beats ${capitalizeFirstLetter(playerSelection)}`;
+        playerWin = false;
     }
 
     console.log(result);
@@ -46,7 +43,12 @@ function calculateGameResults(roundResult) {
     resultText.textContent = "Would you like to pick rock, paper, or scissors?";
     if (roundResult == 'tie') {
         resultText.textContent = "Tie! Please pick again."; 
+    } else if (roundResult) {
+        resultText.textContent = "You won! Please pick again."; 
+    } else {
+        resultText.textContent = "You lost. Please pick again."; 
     }
+
     roundResults += `Round ${currentRound}: You ${(roundResult) ? "won!" : "lost!"}\n`;
     (roundResult) ? playerWins += 1 : computerWins += 1;
 
