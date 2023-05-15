@@ -56,10 +56,6 @@ function calculateGameResults(roundResult) {
     }
 
     roundResults += `Round ${currentRound}: You ${(roundResult) ? "won!" : "lost!"}\n`;
-    (roundResult) ? playerWins += 1 : computerWins += 1;
-
-    console.log(`Your wins: ${playerWins}. Your losses: ${computerWins}.`);
-
     console.log(roundResults);
 
     (playerWins >= 5) ? console.log("Player wins!") : console.log("Player loses!");
