@@ -35,6 +35,14 @@ body {
 #player-score, #cpu-score {
     flex: 1;
 }
+
+#player-score .score-header {
+    color: blue;
+}
+
+
+#cpu-score .score-header {
+    color: green;
 }
 
 .choices {
