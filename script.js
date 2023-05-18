@@ -26,6 +26,7 @@ function playRound() {
     const playerWinScenarios = (playerSelection === "rock" && computerSelection === "scissors" ||
         playerSelection === "scissors" && computerSelection === "paper" ||
                                 playerSelection === "paper" && computerSelection === "rock");
+    currentRound += 1;
 
 
     if (playerSelection === computerSelection) {
