@@ -40,10 +40,11 @@ function playRound() {
         resultText.textContent = "You lost. Please pick again."; 
     }
 
-    roundResults += `Round ${currentRound}: You ${(roundResult) ? "won!" : "lost!"}\n`;
-    console.log(roundResults);
-
-    (playerWins >= 5) ? console.log("Player wins!") : console.log("Player loses!");
+    if (playerScore >= 5) {
+        resultText.textContent = "Congratulations on reaching 5 points! You've won!"; 
+    } else if (CPUScore >= 5) {
+        resultText.textContent = "Looks like you've lost... the computer has hit 5 points!";
+    }
 }
 
 
