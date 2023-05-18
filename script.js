@@ -27,17 +27,17 @@ function playRound() {
         playerSelection === "scissors" && computerSelection === "paper" ||
                                 playerSelection === "paper" && computerSelection === "rock");
 
-    calculateGameResults(playerWin);
-}
 
+    if (playerSelection === computerSelection) {
+        resultText.textContent = `You both drew ${capitalizeFirstLetter(playerSelection)}.`;
     } else if (playerWinScenarios) {
         playerWins += 1 
         playerScore.textContent = playerWins;
-        resultText.textContent = "You won! Please pick again."; 
+        resultText.textContent = "You've won this round! Please pick again."; 
     } else {
         CPUwins += 1;
         CPUScore.textContent = CPUwins;
-        resultText.textContent = "You lost. Please pick again."; 
+        resultText.textContent = "You've lost this round! Please pick again."; 
     }
 
     if (playerScore >= 5) {
