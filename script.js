@@ -23,29 +23,14 @@ function capitalizeFirstLetter(string) {
 function playRound() {
     let playerSelection = this.dataset.choice;
     let computerSelection = getComputerChoice();
-    let playerWin;
-
-    if (playerSelection === computerSelection) {
-        result = `You both drew ${capitalizeFirstLetter(playerSelection)}.`;
-        playerWin = "tie";
-    } else if (playerSelection === "rock" && computerSelection === "scissors" ||
+    const playerWinScenarios = (playerSelection === "rock" && computerSelection === "scissors" ||
         playerSelection === "scissors" && computerSelection === "paper" ||
-        playerSelection === "paper" && computerSelection === "rock") 
-    {
-        playerWin = true;
-    } else {
-        playerWin = false;
-    }
+                                playerSelection === "paper" && computerSelection === "rock");
 
     calculateGameResults(playerWin);
 }
 
-function calculateGameResults(roundResult) {
-    currentRound += 1;
-    resultText.textContent = "Would you like to pick rock, paper, or scissors?";
-    if (roundResult == 'tie') {
-        resultText.textContent = "Tie! Please pick again."; 
-    } else if (roundResult) {
+    } else if (playerWinScenarios) {
         playerWins += 1 
         playerScore.textContent = playerWins;
         resultText.textContent = "You won! Please pick again."; 
