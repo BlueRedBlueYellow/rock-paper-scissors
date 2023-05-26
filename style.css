@@ -9,6 +9,9 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(to bottom, rgba(62, 105, 139, 0.562) 0%, rgba(0, 0, 0, 0.1) 100%), url("./images/chicago.jpg");
+    font-family: Helvetica, Arial, sans-serif;
+    color: white;
+    text-shadow: rgb(0, 0, 0) 0 0 5px;
 }
 
 .game {
@@ -34,15 +37,6 @@ body {
     flex: 1;
 }
 
-#player-score .score-header {
-    color: blue;
-}
-
-
-#cpu-score .score-header {
-    color: green;
-}
-
 .choices {                  
     display: flex;
     width: 100vw;
@@ -51,6 +45,12 @@ body {
 
 .choice {
     flex: 1;
+    margin: 0 1%;
+    color: white;
+    text-shadow: rgb(0, 0, 0) 0 0 20px;
+    font-size: 1.5em;
+    box-shadow: black 0 0 20px;
+    background: linear-gradient(to bottom, rgb(96,109,126), rgb(62,65,74) 50%,rgb(18,19,24),rgb(21,21,31) 95%, rgb(61,75,114));
 }
 
 #footer {
