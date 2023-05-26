@@ -42,10 +42,10 @@ body {
     color: green;
 }
 
-.choices {
+.choices {                  
     display: flex;
-    flex: 1;
     width: 100vw;
+    flex: 1;
 }
 
 .choice {
