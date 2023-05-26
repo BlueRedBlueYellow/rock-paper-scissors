@@ -30,21 +30,23 @@ function playRound() {
 
 
     if (playerSelection === computerSelection) {
-        resultText.textContent = `You both drew ${capitalizeFirstLetter(playerSelection)}.`;
+        resultText.textContent = `You both drew ${capitalizeFirstLetter(playerSelection)}, oops! No one wins this round. Please pick again.`;
     } else if (playerWinScenarios) {
         playerWins += 1 
         playerScore.textContent = playerWins;
-        resultText.textContent = "You've won this round! Please pick again."; 
+        resultText.textContent = `${capitalizeFirstLetter(playerSelection)} beats
+                                  ${capitalizeFirstLetter(computerSelection)}, so you've won this round! Please pick again.`; 
     } else {
         CPUwins += 1;
         CPUScore.textContent = CPUwins;
-        resultText.textContent = "You've lost this round! Please pick again."; 
+        resultText.textContent = `${capitalizeFirstLetter(computerSelection)} beats
+                                  ${capitalizeFirstLetter(playerSelection)}, so you've lost this round... sorry! Please pick again!`; 
     }
 
-    if (playerScore >= 5) {
-        resultText.textContent = "Congratulations on reaching 5 points! You've won!"; 
-    } else if (CPUScore >= 5) {
-        resultText.textContent = "Looks like you've lost... the computer has hit 5 points!";
+    if (playerWins >= 5) {
+        resultText.textContent = "You've reached 5 points, so you've won! Congratulations!"; 
+    } else if (CPUwins >= 5) {
+        resultText.textContent = "Looks like you've lost the game! The computer has hit 5 points!";
     }
 }
 
