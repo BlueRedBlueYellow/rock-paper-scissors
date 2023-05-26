@@ -1,8 +1,8 @@
 const CHOICES = ["rock", "paper", "scissors"];
 const allButtons = document.querySelectorAll(".choice");
 const resultText = document.querySelector("#round-result");
-const playerScore = document.querySelector("#player-score .score");
-const CPUScore = document.querySelector("#cpu-score .score");
+const playerScore = document.querySelector("#player-score");
+const CPUScore = document.querySelector("#cpu-score");
 allButtons.forEach(button => button.addEventListener('click', playRound));
 
 let playerWins = 0;
@@ -30,12 +30,12 @@ function playRound() {
         resultText.textContent = `You both drew ${capitalizeFirstLetter(playerSelection)}, oops! No one wins this round. Please pick again.`;
     } else if (playerWinScenarios) {
         playerWins += 1 
-        playerScore.textContent = playerWins;
+        playerScore.querySelector(".wins").textContent = playerWins;
         resultText.textContent = `${capitalizeFirstLetter(playerSelection)} beats
                                   ${capitalizeFirstLetter(computerSelection)}, so you've won this round! Please pick again.`; 
     } else {
         CPUwins += 1;
-        CPUScore.textContent = CPUwins;
+        CPUScore.querySelector(".wins").textContent = CPUwins;
         resultText.textContent = `${capitalizeFirstLetter(computerSelection)} beats
                                   ${capitalizeFirstLetter(playerSelection)}, so you've lost this round... sorry! Please pick again!`; 
     }
