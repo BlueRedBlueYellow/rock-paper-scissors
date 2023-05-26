@@ -50,5 +50,7 @@ body {
 
 .choice {
     flex: 1;
-    margin: 1%;
+.win {
+    color: yellow;
+    text-shadow: rgb(255, 255, 0) 4px 4px 20px;
 }

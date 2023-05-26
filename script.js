@@ -42,10 +42,9 @@ function playRound() {
 
     if (playerWins >= 5) {
         resultText.textContent = "You've reached 5 points, so you've won! Congratulations!"; 
+        playerScore.classList.add("win");
     } else if (CPUwins >= 5) {
         resultText.textContent = "Looks like you've lost the game! The computer has hit 5 points!";
+        CPUScore.classList.add("win");
     }
 }
-
-
-
