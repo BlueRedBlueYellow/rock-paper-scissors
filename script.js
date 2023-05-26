@@ -31,13 +31,13 @@ function playRound() {
     } else if (playerWinScenarios) {
         playerWins += 1
         playerScore.querySelector(".wins").textContent = playerWins;
-        resultText.textContent = `${capitalizeFirstLetter(playerSelection)} beats
-                                  ${capitalizeFirstLetter(computerSelection)}, so you've won this round! Please pick again.`; 
+        resultText.textContent = `Your ${capitalizeFirstLetter(playerSelection)} beats
+                                  the CPU's ${capitalizeFirstLetter(computerSelection)}, so you've won this round! Please pick again.`; 
     } else {
         CPUwins += 1;
         CPUScore.querySelector(".wins").textContent = CPUwins;
-        resultText.textContent = `${capitalizeFirstLetter(computerSelection)} beats
-                                  ${capitalizeFirstLetter(playerSelection)}, so you've lost this round... sorry! Please pick again!`; 
+        resultText.textContent = `The CPU's ${capitalizeFirstLetter(computerSelection)} beats
+                                  your ${capitalizeFirstLetter(playerSelection)}, so you've lost this round... sorry! Please pick again!`; 
     }
 
     if (playerWins >= 5) {
