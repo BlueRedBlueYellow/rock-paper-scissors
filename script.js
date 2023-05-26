@@ -3,8 +3,6 @@ const allButtons = document.querySelectorAll(".choice");
 const resultText = document.querySelector("#round-result");
 const playerScore = document.querySelector("#player-score .score");
 const CPUScore = document.querySelector("#cpu-score .score");
-
-
 allButtons.forEach(button => button.addEventListener('click', playRound));
 
 let playerWins = 0;
@@ -27,7 +25,6 @@ function playRound() {
         playerSelection === "scissors" && computerSelection === "paper" ||
                                 playerSelection === "paper" && computerSelection === "rock");
     currentRound += 1;
-
 
     if (playerSelection === computerSelection) {
         resultText.textContent = `You both drew ${capitalizeFirstLetter(playerSelection)}, oops! No one wins this round. Please pick again.`;
