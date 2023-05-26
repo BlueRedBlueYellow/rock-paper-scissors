@@ -51,6 +51,17 @@ body {
 
 .choice {
     flex: 1;
+}
+
+#footer {
+    text-align: center;
+    margin: 6px;
+}
+
+#footer a {
+    color: white;
+}
+
 .win {
     color: yellow;
     text-shadow: rgb(255, 255, 0) 4px 4px 20px;
