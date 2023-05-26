@@ -22,14 +22,14 @@ function playRound() {
     let playerSelection = this.dataset.choice;
     let computerSelection = getComputerChoice();
     const playerWinScenarios = (playerSelection === "rock" && computerSelection === "scissors" ||
-        playerSelection === "scissors" && computerSelection === "paper" ||
+                                playerSelection === "scissors" && computerSelection === "paper" ||
                                 playerSelection === "paper" && computerSelection === "rock");
     currentRound += 1;
 
     if (playerSelection === computerSelection) {
         resultText.textContent = `You both drew ${capitalizeFirstLetter(playerSelection)}, oops! No one wins this round. Please pick again.`;
     } else if (playerWinScenarios) {
-        playerWins += 1 
+        playerWins += 1
         playerScore.querySelector(".wins").textContent = playerWins;
         resultText.textContent = `${capitalizeFirstLetter(playerSelection)} beats
                                   ${capitalizeFirstLetter(computerSelection)}, so you've won this round! Please pick again.`; 
