@@ -1,4 +1,5 @@
 const CHOICES = ["rock", "paper", "scissors"];
+const REQUIRED_POINTS_TO_WIN = 5;
 const allButtons = document.querySelectorAll(".choice");
 const resultText = document.querySelector("#round-result");
 const playerScore = document.querySelector("#player-score");
@@ -40,11 +41,11 @@ function playRound() {
                                   your ${capitalizeFirstLetter(playerSelection)}, so you've lost this round... sorry! Please pick again!`; 
     }
 
-    if (playerWins >= 5) {
-        resultText.textContent = "You've reached 5 points, so you've won! Congratulations!"; 
-        playerScore.classList.add("win");
-    } else if (CPUwins >= 5) {
-        resultText.textContent = "Looks like you've lost the game! The computer has hit 5 points!";
-        CPUScore.classList.add("win");
+    if (playerPoints >= REQUIRED_POINTS_TO_WIN) {
+        resultText.textContent = `You've reached ${REQUIRED_POINTS_TO_WIN} points, so you've won! Congratulations!`; 
+        playerScore.classList.add("game-win");
+    } else if (cpuPoints >= REQUIRED_POINTS_TO_WIN) {
+        resultText.textContent = `Looks like you've lost the game! The computer has hit ${REQUIRED_POINTS_TO_WIN} points!`;
+        cpuScore.classList.add("game-win");
     }
 }
