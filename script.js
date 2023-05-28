@@ -6,11 +6,6 @@ const playerScore = document.querySelector("#player-score");
 const CPUScore = document.querySelector("#cpu-score");
 allButtons.forEach(button => button.addEventListener('click', playRound));
 
-let playerWins = 0;
-let CPUwins = 0;
-let roundResults = ``;
-let currentRound = 0;
-
 function getComputerChoice() {
     return CHOICES[Math.floor(Math.random() * CHOICES.length)]; 
 }
@@ -25,7 +20,6 @@ function playRound() {
     const playerWinScenarios = (playerSelection === "rock" && computerSelection === "scissors" ||
                                 playerSelection === "scissors" && computerSelection === "paper" ||
                                 playerSelection === "paper" && computerSelection === "rock");
-    currentRound += 1;
 
     if (playerSelection === computerSelection) {
         resultText.textContent = `You both drew ${capitalizeFirstLetter(playerSelection)}, oops! No one wins this round. Please pick again.`;
