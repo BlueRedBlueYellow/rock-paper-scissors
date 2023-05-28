@@ -29,13 +29,13 @@ function playRound() {
     if (playerSelection === computerSelection) {
         resultText.textContent = `You both drew ${capitalizeFirstLetter(playerSelection)}, oops! No one wins this round. Please pick again.`;
     } else if (playerWinScenarios) {
-        playerWins += 1
-        playerScore.querySelector(".wins").textContent = playerWins;
+        playerPoints += 1
+        playerScore.querySelector(".points").textContent = playerPoints;
         resultText.textContent = `Your ${capitalizeFirstLetter(playerSelection)} beats
                                   the CPU's ${capitalizeFirstLetter(computerSelection)}, so you've won this round! Please pick again.`; 
     } else {
-        CPUwins += 1;
-        CPUScore.querySelector(".wins").textContent = CPUwins;
+        cpuPoints += 1;
+        cpuScore.querySelector(".points").textContent = cpuPoints;
         resultText.textContent = `The CPU's ${capitalizeFirstLetter(computerSelection)} beats
                                   your ${capitalizeFirstLetter(playerSelection)}, so you've lost this round... sorry! Please pick again!`; 
     }
