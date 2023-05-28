@@ -1,9 +1,13 @@
 const CHOICES = ["rock", "paper", "scissors"];
 const REQUIRED_POINTS_TO_WIN = 5;
-const allButtons = document.querySelectorAll(".choice");
+let playerPoints = 0;
+let cpuPoints = 0;
+let roundResults = ``;
+
 const resultText = document.querySelector("#round-result");
 const playerScore = document.querySelector("#player-score");
-const CPUScore = document.querySelector("#cpu-score");
+const cpuScore = document.querySelector("#cpu-score");
+const allButtons = document.querySelectorAll(".choice");
 allButtons.forEach(button => button.addEventListener('click', playRound));
 
 function getComputerChoice() {
